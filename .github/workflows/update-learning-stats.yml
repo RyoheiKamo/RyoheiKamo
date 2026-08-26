@@ -1,0 +1,60 @@
+name: Update Learning Stats
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v4
+
+      - name: Install cloc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cloc
+
+      - name: Clone repositories
+        run: |
+          mkdir -p repos
+
+          git clone --depth 1 \
+            https://github.com/RyoheiKamo/rust-study.git \
+            repos/rust-study
+
+          git clone --depth 1 \
+            https://github.com/RyoheiKamo/go-slack-bot.git \
+            repos/go-slack-bot
+
+          git clone --depth 1 \
+            https://github.com/RyoheiKamo/ai-slack-bot.git \
+            repos/ai-slack-bot
+
+      - name: Count lines
+        run: |
+          cloc repos \
+            --exclude-dir=.git,vendor,node_modules,storage,bootstrap/cache \
+            --csv \
+            --out=cloc.csv
+
+      - name: Generate stats
+        run: bash scripts/generate-stats.sh
+
+      - name: Commit stats
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md stats/language-stats.md
+
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: update learning stats"
+            git push
+          fi
