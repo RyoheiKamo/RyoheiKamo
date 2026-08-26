@@ -38,7 +38,7 @@ jobs:
       - name: Count lines
         run: |
           cloc repos \
-            --exclude-dir=.git,vendor,node_modules,storage,bootstrap/cache \
+            --exclude-dir=.git,vendor,node_modules,storage,cache \
             --csv \
             --out=cloc.csv
 
