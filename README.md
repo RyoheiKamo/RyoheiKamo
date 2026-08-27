@@ -9,8 +9,8 @@
 | Language | Files | Code |
 |---|---:|---:|
 | PHP | 59 | 3094 |
+| Go | 2 | 104 |
 | JavaScript | 2 | 23 |
-| Go | 1 | 15 |
 | Rust | 1 | 3 |
 
 <!-- LEARNING_STATS_END -->
