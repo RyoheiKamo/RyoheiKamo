@@ -9,7 +9,7 @@
 | Language | Files | Code |
 |---|---:|---:|
 | PHP | 59 | 3094 |
-| Go | 2 | 104 |
+| Go | 3 | 195 |
 | JavaScript | 2 | 23 |
 | Rust | 1 | 3 |
 
