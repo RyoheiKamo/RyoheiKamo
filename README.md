@@ -11,6 +11,7 @@
 | PHP | 68 | 4009 |
 | Go | 8 | 635 |
 | Rust | 1 | 3 |
+| TypeScript | 7 | 172 |
 | JavaScript | 2 | 23 |
 
 <!-- LEARNING_STATS_END -->
