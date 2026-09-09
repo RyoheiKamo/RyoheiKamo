@@ -10,7 +10,7 @@
 |---|---:|---:|
 | PHP | 68 | 4009 |
 | Go | 8 | 635 |
-| JavaScript | 2 | 23 |
 | Rust | 1 | 3 |
+| JavaScript | 2 | 23 |
 
 <!-- LEARNING_STATS_END -->
