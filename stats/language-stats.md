@@ -2,7 +2,7 @@
 
 | Language | Files | Code |
 |---|---:|---:|
-| PHP | 68 | 4009 |
+| PHP | 76 | 4600 |
 | Go | 8 | 635 |
 | Rust | 1 | 3 |
 | TypeScript | 12 | 937 |
